@@ -80,7 +80,7 @@
             CÒN BỒ THÌ THÔI, CÓ VẺ XA XÔI<br>
             NHƯNG BÌNH THƯỜNG THÔI, CỨ BÌNH TĨNH THÔI<br>
             DẪU CÓ SỤC SÔI VẪN PHẢI LỰA MỒI<br>
-            ĐỪNG QUÁ BỒI HỒI RỒI LỰA NGƯỜI TỒI
+            ĐỪNG QUÁ BỒI HỒI RỒI LỰA NGƯỜI TỒI<br>
         </p>
         <div class="footer">Chúc một ngày thật vui và ý nghĩa!</div>
     </div>
