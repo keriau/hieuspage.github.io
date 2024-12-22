@@ -17,17 +17,47 @@
             overflow: hidden;
             color: #333;
         }
+        .card-container {
+            perspective: 1000px;
+        }
         .card {
-            background: white;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            padding: 20px;
             width: 80%;
             max-width: 600px;
-            text-align: center;
-            animation: fadeIn 1.5s ease;
+            height: 400px;
             position: relative;
-            overflow: hidden;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 1s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        .card.open {
+            transform: rotateY(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        .front {
+            background: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .back {
+            background: #ff9a9e;
+            transform: rotateY(180deg);
+            text-align: center;
+            padding: 20px;
         }
 
         .balloons {
@@ -123,31 +153,44 @@
     </style>
 </head>
 <body>
-    <div class="balloons">
-        <div class="balloon" style="left: 20%;"></div>
-        <div class="balloon" style="left: 50%;"></div>
-        <div class="balloon" style="left: 80%;"></div>
-    </div>
-    <div class="card">
-        <h1>Chúc mừng sinh nhật, Thảo béo!</h1>
-        <h2>Từ: Hiếu</h2>
-        <p>
-            HÔM NAY SINH NHẬT CHỊ BÉO ĐÃ TỚI<br>
-            CHÚC BÉO TUỔI MỚI, CON ĐƯỜNG PHẤP PHỚI<br>
-            CƠ HỘI ÀO TỚI RỒI ÔM KHÔNG RỜI<br>
-            VÍ THÊM NHIỀU HỜI, TÀI KHOẢN THÊM LỜI<br><br>
+    <div class="card-container">
+        <div class="card" onclick="this.classList.toggle('open')">
+            <div class="front">
+                <div class="balloons">
+                    <div class="balloon" style="left: 20%;"></div>
+                    <div class="balloon" style="left: 50%;"></div>
+                    <div class="balloon" style="left: 80%;"></div>
+                </div>
+                <h1>Chúc mừng sinh nhật, Thảo béo!</h1>
+                <h2>Từ: Hiếu</h2>
+                <p>
+                    HÔM NAY SINH NHẬT CHỊ BÉO ĐÃ TỚI<br>
+                    CHÚC BÉO TUỔI MỚI, CON ĐƯỜNG PHẤP PHỚI<br>
+                    CƠ HỘI ÀO TỚI RỒI ÔM KHÔNG RỜI<br>
+                    VÍ THÊM NHIỀU HỜI, TÀI KHOẢN THÊM LỜI<br><br>
 
-            CUỘC SỐNG THẢNH THƠI, ĐƯỢC HẾT MÌNH CHƠI<br>
-            BÊN NGOÀI TẢ TƠI THÌ VỀ XẢ HƠI<br>
-            SỨC KHOẺ KHÔNG RỜI, NỤ CƯỜI KHÔNG VƠI<br>
-            HÍT SÂU MỘT HƠI, LÀM ĐIỀU MÌNH “MƠI”<br><br>
+                    CUỘC SỐNG THẢNH THƠI, ĐƯỢC HẾT MÌNH CHƠI<br>
+                    BÊN NGOÀI TẢ TƠI THÌ VỀ XẢ HƠI<br>
+                    SỨC KHOẺ KHÔNG RỜI, NỤ CƯỜI KHÔNG VƠI<br>
+                    HÍT SÂU MỘT HƠI, LÀM ĐIỀU MÌNH “MƠI”<br><br>
 
-            CÒN BỒ THÌ THÔI, CÓ VẺ XA XÔI<br>
-            NHƯNG BÌNH THƯỜNG THÔI, CỨ BÌNH TĨNH THÔI<br>
-            DẪU CÓ SỤC SÔI VẪN PHẢI LỰA MỒI<br>
-            ĐỪNG QUÁ BỒI HỒI RỒI LỰA NGƯỜI TỒI<br>
-        </p>
-        <div class="footer">Chúc một ngày thật vui và ý nghĩa!</div>
+                    CÒN BỒ THÌ THÔI, CÓ VẺ XA XÔI<br>
+                    NHƯNG BÌNH THƯỜNG THÔI, CỨ BÌNH TĨNH THÔI<br>
+                    DẪU CÓ SỤC SÔI VẪN PHẢI LỰA MỒI<br>
+                    ĐỪNG QUÁ BỒI HỒI RỒI LỰA NGƯỜI TỒI<br>
+                </p>
+            </div>
+            <div class="back">
+                <h1>Chúc một ngày thật vui và ý nghĩa!</h1>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // This script allows the card to flip when clicked
+        document.querySelector('.card').addEventListener('click', function () {
+            this.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
