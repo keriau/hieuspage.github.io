@@ -31,6 +31,8 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             border-radius: 15px;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
         .card.open {
             transform: rotateY(180deg);
@@ -44,20 +46,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
             border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
         }
 
         .front {
             background: white;
-            text-align: center;
-            padding: 20px;
         }
 
         .back {
             background: #ff9a9e;
             transform: rotateY(180deg);
-            text-align: center;
-            padding: 20px;
         }
 
         .balloons {
@@ -106,6 +108,7 @@
         h1 {
             color: #e63946;
             font-size: 2.5rem;
+            margin: 0;
             animation: popIn 1s ease-out;
         }
 
@@ -119,7 +122,10 @@
         p {
             margin: 15px 0;
             line-height: 1.8;
+            font-size: 1rem;
             animation: fadeIn 2.5s ease;
+            white-space: pre-wrap; /* Đảm bảo văn bản không bị tràn */
+            word-wrap: break-word; /* Đảm bảo từ không bị tràn */
         }
 
         .footer {
@@ -194,3 +200,4 @@
     </script>
 </body>
 </html>
+
