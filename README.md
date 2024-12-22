@@ -21,9 +21,9 @@
             perspective: 1000px;
         }
         .card {
-            width: 90%;  /* Thay đổi chiều rộng khung thiệp */
-            max-width: 800px; /* Thay đổi giá trị max-width */
-            height: 500px;  /* Thay đổi chiều cao khung thiệp */
+            width: 80%;  /* Mở rộng khung thiệp chiếm 80% màn hình */
+            max-width: 800px;
+            height: 500px;
             position: relative;
             transform-style: preserve-3d;
             transform: rotateY(0deg);
@@ -51,6 +51,7 @@
             border-radius: 15px;
             overflow: hidden;
             text-align: center;
+            overflow-y: auto; /* Cho phép lướt lên xuống */
         }
 
         .front {
@@ -107,25 +108,26 @@
 
         h1 {
             color: #e63946;
-            font-size: 2.5rem;
+            font-size: 2rem;  /* Giảm cỡ chữ */
             margin: 0;
             animation: popIn 1s ease-out;
         }
 
         h2 {
             color: #457b9d;
-            font-size: 1.5rem;
+            font-size: 1.2rem;  /* Giảm cỡ chữ */
             margin: 10px 0;
             animation: fadeIn 2s ease;
         }
 
         p {
-            margin: 15px 0;
-            line-height: 1.8;
-            font-size: 1rem;
+            margin: 10px 0;  /* Giảm khoảng cách giữa các đoạn */
+            line-height: 1.4;  /* Giảm khoảng cách giữa các dòng */
+            font-size: 1rem;  /* Giảm cỡ chữ */
             animation: fadeIn 2.5s ease;
-            white-space: pre-wrap; /* Đảm bảo văn bản không bị tràn */
-            word-wrap: break-word; /* Đảm bảo từ không bị tràn */
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-y: auto;
         }
 
         .footer {
@@ -200,5 +202,3 @@
     </script>
 </body>
 </html>
-
-
