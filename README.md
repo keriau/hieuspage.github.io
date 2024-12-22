@@ -17,50 +17,17 @@
             overflow: hidden;
             color: #333;
         }
-        .card-container {
-            perspective: 1000px;
-        }
         .card {
-            width: 80%;  /* Mở rộng khung thiệp chiếm 80% màn hình */
-            max-width: 800px;
-            height: 500px;
-            position: relative;
-            transform-style: preserve-3d;
-            transform: rotateY(0deg);
-            transition: transform 1s;
+            background: white;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             border-radius: 15px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-        }
-        .card.open {
-            transform: rotateY(180deg);
-        }
-
-        .front, .back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
-            box-sizing: border-box;
-            border-radius: 15px;
-            overflow: hidden;
+            width: 80%;
+            max-width: 600px;
             text-align: center;
-            overflow-y: auto; /* Cho phép lướt lên xuống */
-        }
-
-        .front {
-            background: white;
-        }
-
-        .back {
-            background: #ff9a9e;
-            transform: rotateY(180deg);
+            animation: fadeIn 1.5s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .balloons {
@@ -108,26 +75,21 @@
 
         h1 {
             color: #e63946;
-            font-size: 2rem;  /* Giảm cỡ chữ */
-            margin: 0;
+            font-size: 2.5rem;
             animation: popIn 1s ease-out;
         }
 
         h2 {
             color: #457b9d;
-            font-size: 1.2rem;  /* Giảm cỡ chữ */
+            font-size: 1.5rem;
             margin: 10px 0;
             animation: fadeIn 2s ease;
         }
 
         p {
-            margin: 10px 0;  /* Giảm khoảng cách giữa các đoạn */
-            line-height: 1.4;  /* Giảm khoảng cách giữa các dòng */
-            font-size: 1rem;  /* Giảm cỡ chữ */
+            margin: 15px 0;
+            line-height: 1.8;
             animation: fadeIn 2.5s ease;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow-y: auto;
         }
 
         .footer {
@@ -161,44 +123,31 @@
     </style>
 </head>
 <body>
-    <div class="card-container">
-        <div class="card" onclick="this.classList.toggle('open')">
-            <div class="front">
-                <div class="balloons">
-                    <div class="balloon" style="left: 20%;"></div>
-                    <div class="balloon" style="left: 50%;"></div>
-                    <div class="balloon" style="left: 80%;"></div>
-                </div>
-                <h1>Chúc mừng sinh nhật, Thảo béo!</h1>
-                <h2>Từ: Hiếu</h2>
-                <p>
-                    HÔM NAY SINH NHẬT CHỊ BÉO ĐÃ TỚI<br>
-                    CHÚC BÉO TUỔI MỚI, CON ĐƯỜNG PHẤP PHỚI<br>
-                    CƠ HỘI ÀO TỚI RỒI ÔM KHÔNG RỜI<br>
-                    VÍ THÊM NHIỀU HỜI, TÀI KHOẢN THÊM LỜI<br><br>
-
-                    CUỘC SỐNG THẢNH THƠI, ĐƯỢC HẾT MÌNH CHƠI<br>
-                    BÊN NGOÀI TẢ TƠI THÌ VỀ XẢ HƠI<br>
-                    SỨC KHOẺ KHÔNG RỜI, NỤ CƯỜI KHÔNG VƠI<br>
-                    HÍT SÂU MỘT HƠI, LÀM ĐIỀU MÌNH “MƠI”<br><br>
-
-                    CÒN BỒ THÌ THÔI, CÓ VẺ XA XÔI<br>
-                    NHƯNG BÌNH THƯỜNG THÔI, CỨ BÌNH TĨNH THÔI<br>
-                    DẪU CÓ SỤC SÔI VẪN PHẢI LỰA MỒI<br>
-                    ĐỪNG QUÁ BỒI HỒI RỒI LỰA NGƯỜI TỒI<br>
-                </p>
-            </div>
-            <div class="back">
-                <h1>Chúc một ngày thật vui và ý nghĩa!</h1>
-            </div>
-        </div>
+    <div class="balloons">
+        <div class="balloon" style="left: 20%;"></div>
+        <div class="balloon" style="left: 50%;"></div>
+        <div class="balloon" style="left: 80%;"></div>
     </div>
+    <div class="card">
+        <h1>Chúc mừng sinh nhật, Thảo béo!</h1>
+        <h2>Từ: Hiếu</h2>
+        <p>
+            HÔM NAY SINH NHẬT CHỊ BÉO ĐÃ TỚI<br>
+            CHÚC BÉO TUỔI MỚI, CON ĐƯỜNG PHẤP PHỚI<br>
+            CƠ HỘI ÀO TỚI RỒI ÔM KHÔNG RỜI<br>
+            VÍ THÊM NHIỀU HỜI, TÀI KHOẢN THÊM LỜI<br><br>
 
-    <script>
-        // This script allows the card to flip when clicked
-        document.querySelector('.card').addEventListener('click', function () {
-            this.classList.toggle('open');
-        });
-    </script>
+            CUỘC SỐNG THẢNH THƠI, ĐƯỢC HẾT MÌNH CHƠI<br>
+            BÊN NGOÀI TẢ TƠI THÌ VỀ XẢ HƠI<br>
+            SỨC KHOẺ KHÔNG RỜI, NỤ CƯỜI KHÔNG VƠI<br>
+            HÍT SÂU MỘT HƠI, LÀM ĐIỀU MÌNH “MƠI”<br><br>
+
+            CÒN BỒ THÌ THÔI, CÓ VẺ XA XÔI<br>
+            NHƯNG BÌNH THƯỜNG THÔI, CỨ BÌNH TĨNH THÔI<br>
+            DẪU CÓ SỤC SÔI VẪN PHẢI LỰA MỒI<br>
+            ĐỪNG QUÁ BỒI HỒI RỒI LỰA NGƯỜI TỒI<br>
+        </p>
+        <div class="footer">Chúc một ngày thật vui và ý nghĩa!</div>
+    </div>
 </body>
 </html>
