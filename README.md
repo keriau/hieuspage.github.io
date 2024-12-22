@@ -16,7 +16,21 @@
             height: 100vh;
             overflow: hidden;
             color: #333;
+            animation: backgroundAnimation 10s linear infinite;
         }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            }
+            50% {
+                background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            }
+            100% {
+                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            }
+        }
+
         .card {
             background: white;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -25,9 +39,20 @@
             width: 80%;
             max-width: 600px;
             text-align: center;
-            animation: fadeIn 1.5s ease;
+            animation: slideUp 1.5s ease-out;
             position: relative;
             overflow: hidden;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .balloons {
