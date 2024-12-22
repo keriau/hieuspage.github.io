@@ -21,9 +21,9 @@
             perspective: 1000px;
         }
         .card {
-            width: 80%;
-            max-width: 600px;
-            height: 400px;
+            width: 90%;  /* Thay đổi chiều rộng khung thiệp */
+            max-width: 800px; /* Thay đổi giá trị max-width */
+            height: 500px;  /* Thay đổi chiều cao khung thiệp */
             position: relative;
             transform-style: preserve-3d;
             transform: rotateY(0deg);
@@ -200,4 +200,5 @@
     </script>
 </body>
 </html>
+
 
