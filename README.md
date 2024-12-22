@@ -26,43 +26,108 @@
             max-width: 600px;
             text-align: center;
             animation: fadeIn 1.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balloons {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(circle, #ff6f61, #ff4757);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(2) {
+            background: radial-gradient(circle, #2ed573, #1e90ff);
+            animation-delay: 2s;
+        }
+
+        .balloon:nth-child(3) {
+            background: radial-gradient(circle, #ffa502, #ff6348);
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(-50%) translateY(100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-50%) translateY(-100%);
+                opacity: 0;
+            }
         }
 
         h1 {
             color: #e63946;
             font-size: 2.5rem;
+            animation: popIn 1s ease-out;
         }
 
         h2 {
             color: #457b9d;
             font-size: 1.5rem;
             margin: 10px 0;
+            animation: fadeIn 2s ease;
         }
 
         p {
             margin: 15px 0;
             line-height: 1.8;
+            animation: fadeIn 2.5s ease;
         }
 
         .footer {
             margin-top: 20px;
             font-size: 1rem;
             color: #2a9d8f;
+            animation: fadeIn 3s ease;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="balloons">
+        <div class="balloon" style="left: 20%;"></div>
+        <div class="balloon" style="left: 50%;"></div>
+        <div class="balloon" style="left: 80%;"></div>
+    </div>
     <div class="card">
         <h1>Chúc mừng sinh nhật, Thảo béo!</h1>
         <h2>Từ: Hiếu</h2>
