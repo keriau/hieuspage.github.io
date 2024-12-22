@@ -13,22 +13,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-y: scroll; /* Cho phép thanh cuộn dọc */
             color: #333;
-            animation: backgroundAnimation 10s linear infinite;
-        }
-
-        @keyframes backgroundAnimation {
-            0% {
-                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            }
-            50% {
-                background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-            }
-            100% {
-                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            }
+            flex-direction: column; /* Giúp các phần tử trong body có thể lăn theo chiều dọc */
         }
 
         .card {
@@ -170,7 +158,7 @@
             CÒN BỒ THÌ THÔI, CÓ VẺ XA XÔI<br>
             NHƯNG BÌNH THƯỜNG THÔI, CỨ BÌNH TĨNH THÔI<br>
             DẪU CÓ SỤC SÔI VẪN PHẢI LỰA MỒI<br>
-            ĐỪNG QUÁ BỒI HỒI RỒI LỰA NGƯỜI TỒI<br>
+            ĐỪNG QUÁ BỒI HỒI RỒI LỰA NGƯỜI TỒI
         </p>
         <div class="footer">Chúc một ngày thật vui và ý nghĩa!</div>
     </div>
